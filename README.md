@@ -1,3 +1,9 @@
+SmartPark – Smart Parking & P2P Marketplace
+
+SmartPark is a modern mobile parking application built using React Native (Expo) and Supabase (PostgreSQL).
+
+It combines intelligent parking discovery with a simple peer-to-peer parking rental system.
+
 ⏱ Smart Booking Flow
 
 State-based booking confirmation
