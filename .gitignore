@@ -1,0 +1,8 @@
+node_modules/
+.expo/
+dist/
+.env
+App.V1/node_modules/
+App.V1/.expo/
+App.V1/dist/
+App.V1/.env
