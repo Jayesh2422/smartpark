@@ -1,240 +1,57 @@
-SmartPark – Intelligent Parking Decision Engine
+⏱ Smart Booking Flow
 
-A modern smart parking mobile application that uses multi-factor decision algorithms, dynamic pricing, and optimization-based slot allocation to enhance parking efficiency.
+State-based booking confirmation
 
-📱 Overview
+“Confirm” button changes to “Parking Booked”
 
-SmartPark is a React Native + Supabase powered smart parking application designed to:
+Duplicate booking prevention
 
-Help users discover nearby parking spaces
+Scroll-enabled mobile screens
 
-Dynamically adjust pricing based on demand
+🚘 Vehicle Management
 
-Suggest intelligent alternatives
+Add vehicles from Home screen
 
-Optimize slot allocation based on vehicle type and duration
+Working delete functionality
 
-Improve parking efficiency using algorithm-driven logic
+Vehicle tab removed from bottom navigation
 
-This system simulates a real-world intelligent parking infrastructure using structured backend design and decision-engine logic.
+🅿️ Peer-to-Peer Parking (P2P)
 
-🎯 Key Features
-📍 1. Location-Based Parking Search
+New bottom tab for marketplace:
 
-Real-world location search
+Rent private parking (hourly / daily / 1–12 months)
 
-Adjustable search radius (1km, 3km, 5km)
+List your own parking space for rent
 
-Distance calculated using Haversine formula
+Track rental status and renter details
 
-Map view + list view
+Simple, controlled implementation (no ratings, no images)
 
-Nearby parkings dynamically filtered
-
-🧠 2. Intelligent Parking Comparison Engine
-
-Multi-factor scoring model:
-
-score =
-(distance × weight) +
-(price × weight) -
-(availability × weight)
-
-
-Automatically highlights:
-
-⭐ Best Overall
-
-💰 Cheapest
-
-🚶 Closest
-
-💰 3. Dynamic Pricing Engine
-
-Price is calculated using:
-
-finalPrice =
-basePrice × holidayFactor × weekendFactor × occupancyFactor × durationDiscount
-
-
-Factors:
-
-Holiday surge multiplier
-
-Weekend multiplier
-
-Occupancy-based surge
-
-Long-duration discount
-
-📅 4. Holiday-Based Demand Detection
-
-Manual yearly holiday dataset
-
-Automatic surge pricing on holidays
-
-Holiday alert banner displayed
-
-No external holiday API required.
-
-⏱ 5. Smart Duration Estimator
-
-Calculates user’s average parking duration
-
-Calculates location-based average duration
-
-Provides behavioral insight
-
-Example:
-
-“You usually park for 1h 45m.”
-
-🔁 6. Smart Alternative Suggestion
-
-If selected parking:
-
-Is full
-
-Too expensive
-
-Too far
-
-System suggests a better alternative with explanation:
-
-“Parking B is ₹10 cheaper and 0.8km closer.”
-
-🅿️ 7. Slot Allocation Optimization
-
-Slots are assigned using weighted scoring:
-
-slotScore =
-(sizeMatch × weight) +
-(distanceFactor × weight) +
-(durationSuitability × weight)
-
-
-Optimizes for:
-
-Vehicle size compatibility
-
-Proximity
-
-Expected duration
-
-📊 8. Occupancy-Based Intelligence
-
-Real-time slot availability tracking
-
-Occupancy-based pricing adjustments
-
-Demand forecasting logic
-
-🎨 9. Modern UI Design
-
-White primary theme
-
-Coffee brown accent (#6F4E37)
-
-Rounded cards (16px radius)
-
-Smooth animations & toggle controls
-
-Minimal premium design
-
-Modern segmented toggles & filter chips
-
-🏗 Tech Stack
-Frontend
+🗄 Tech Stack
 
 React Native (Expo)
 
-Reanimated / LayoutAnimation (for smooth UI)
+Supabase (PostgreSQL + Auth)
 
-Modern design system
+Google Maps API (planned)
 
-Backend
+All pricing, optimization, and recommendation logic is built manually inside the app.
 
-Supabase (PostgreSQL)
+📍 Smart Parking Discovery (To be added later)
 
-Supabase Auth
+Location-based search
 
-Structured relational schema
+Adjustable radius filtering
 
-Maps
+Distance calculation (Haversine formula)
 
-Google Maps / OpenStreetMap
+Intelligent parking comparison
 
-Used only for:
+Dynamic pricing (holiday, weekend, occupancy, duration)
 
-Location search
+Smart alternative suggestions
 
-Coordinates
+Optimized slot allocation
 
-Map rendering
-
-All recommendation and pricing intelligence is built manually.
-
-🗄 Database Schema
-users
-
-id
-
-email
-
-created_at
-
-parkings
-
-id
-
-name
-
-lat
-
-lng
-
-base_price
-
-total_slots
-
-occupied_slots
-
-slots
-
-id
-
-parking_id
-
-size
-
-distance_from_entrance
-
-floor
-
-status
-
-bookings
-
-id
-
-user_id
-
-parking_id
-
-slot_id
-
-start_time
-
-end_time
-
-duration_minutes
-
-holidays
-
-id
-
-name
-
-date
-
-multiplier
+🔜 Google Maps API integration will be added in a future update for full map-based search and navigation.
